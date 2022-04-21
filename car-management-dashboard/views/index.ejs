@@ -1,0 +1,161 @@
+<%- include('layouts/header') %> 
+<%- include('layouts/navbar') %> 
+
+<div class="row">
+  
+    <!-- Sidebar wraper dashboard -->
+        <!-- <div class="col-lg-2 bg-white shadow-sm" id="sidebar-wrapper" style="width: 15rem; height:100%; padding-bottom: 100%;">
+            <div class="list-group pt-3">
+                <a href="#" class="fs-7 text-dark fw-bold ms-1 mb-2">Dashboard</a>
+                <a href="#" class="fs-7 text-dark fw-bold ms-1 mb-2">Projects</a>
+            </div>
+          </div> -->
+    <!-- /#sidebar-wrapper -->
+
+    <!-- section content -->
+    <div class="col-lg-12 ">
+      
+        <div class="container-fluid px-4">
+          
+          <!-- breadcrumb -->
+          <%- include('layouts/breadcrumb') %>  
+          <!-- end breadcrumb -->
+
+          <!-- Name of view -->
+          <div class="name-of-view">
+            <div class="row">
+              <div class="col-lg-2">
+                <h5 class="fw-bold">List Car</h5>
+              </div>
+              <div class="col-lg-10">
+                <a href="/add" class="btn btn-sm" style=" margin-left:41rem; background-color: #0D28A6; color: white;">+ Add New Car</a>
+              </div>
+              
+            </div>
+            
+          </div>
+
+          <div class="size-of-menu ms-1">
+            <a href="/" class="btn bg-white btn-sm" style="color:rgb(182, 179, 179); border-color: #0D28A6; 
+            border-radius: 2px;">All</a>
+            <a href="#" class="btn bg-white btn-sm" style="color:rgb(182, 179, 179); border-color: #0D28A6; 
+            border-radius: 2px;">Small</a>
+            <a href="#" class="btn bg-white btn-sm" style="color:rgb(182, 179, 179); border-color: #0D28A6; 
+            border-radius: 2px;">Medium</a>
+            <a href="#" class="btn bg-white btn-sm" style="color:rgb(182, 179, 179); border-color: #0D28A6; 
+            border-radius: 2px;">Large</a>
+          </div>
+          <!-- End name -->
+            <div class="row g-3 my-2">
+              <% if (message) { %>
+                <div class="alert alert-dismissible fade show alert-<%= message.type %>" role="alert">
+                  <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                  <span class="fw-bold"><%= message.message %></span>
+                </div>
+              <% } %>
+            <!--Conten Looping-->
+
+            <% if (cars != '') { %>
+              <% for( let index = 0; index < cars.length; index++ ) { %>
+                <div class="col-lg-4">
+                  <div class="card ms-1 mb-3 p-2 shadow-sm">
+                    <div class="card-body">
+                      <div class="image">
+                        <img src="<%= cars[index].images %> " alt="image car rental">
+                      </div>
+  
+                      <div class="type-car mt-5">
+                        <p ><%= cars[index].name %> </p>
+                      </div>
+  
+                      <div class="price">
+                        <span> <%= cars[index].price %> /hari </span>
+                      </div>
+  
+                      <div class="created-at mt-2" >
+                        <div class="row">
+                          <div class="col-lg-1">
+                            <img src="images/fi_clock.png" alt="">
+                          </div>
+                          <div class="col-lg-9">
+                            <p class="pt-1 ms-2"><%= cars[index].updatedAt %> </p>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="icon-buton">
+                        <div class="row">
+                          <div class="col-lg-6 btn-delete">
+                            <!-- Button trigger modal -->
+                            <a href="#"   class="btn btn-lg btn-outline-danger mb-3" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                              <img src="images/fi_trash-2.png" alt="">
+                              <span> Delete</span>
+                            </a>
+                          </div>
+                          <div class="col-lg-6 btn-edited">
+                            <a href="/edit/<%= cars[index]._id %> " type="submit"  class="btn btn-lg" style="width: 100%; background: #5CB85F;">
+                              <img src="images/fi_edit.png" alt="">
+                              <span> Edit</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+  
+                    </div>
+                  </div>
+                </div>
+                <!-- Modal Boxs Delete -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+              <div class="modal-dialog modal-sm modal-dialog-centered" >
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="bg-modal" style="text-align: center;">
+                        <img src="images/BeepBeep-Clouds.png" alt="">
+                        <img src="images/BeepBeep-MediumVehicle.png" alt="">
+                      </div>
+                      <div class="header-modal mt-2">
+                        <h5 class="text-center fs-5 fw-bold">Menghapus Data Mobil </h5>
+                        
+                      </div>
+                      <div class="is-paragraf mt-2">
+                        <span class="text-center fs-6 ">Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin menghapus? </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-button text-center mt-2 mb-3">
+                    <div class="button">
+                      <a href="/delete/<%= cars[index]._id %>" class="btn mb-1 mt-1 fw-bold bg-white ps-4 pe-4" type="reset" style="color: #0D28A6; 
+                      border-color: #0D28A6; 
+                      border-radius: 2px; 
+                      height: 2.5rem;">Ya</a>
+
+                      <button class="btn mb-1 mt-1 fw-bold ms-3 ps-4 pe-4" data-bs-dismiss="modal" type="button" style="
+                      background-color:#0D28A6 ;
+                      color: white;
+                      border-radius: 2px; 
+                      height: 2.5rem;">Tidak</button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Modal Boxs Delete -->
+              <% } %>
+            <% } else{ %>
+              <h3 class="text-center text-dark mt-s">Tidak ada mobil data di database</h3>
+            <% } %> 
+              
+            <!--End Conten Looping-->
+            
+            
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- /#page-content-wrapper -->
+
+<%- include('layouts/footer') %> 

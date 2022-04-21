@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %> </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+    crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+  </head>
+  <body>
+
+  <section class="header">
+    <div class="container-fluid">
+      <div class="row">
+            <!-- Sidebar -->
+          <div class=" col-lg-1 sidebar-wrapper shadow-sm sidebar-1" id="sidebar-wrapper" >
+              <div class="sidebar-heading text-center py-3">
+                <img src="../images/Rectangle-63.png" alt="logo-main">
+              </div>
+              <div class="list-group list-group-flush mt-3">
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-white">
+                    <img src="../images/fi_home.png" alt="">
+                    <small style="margin-left: -0.5rem;">Home</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-white">
+                    <img src="../images/fi_truck.png" alt="">
+                    <small style="margin-left: -0.4rem;">Cars</small>
+                </a>
+              </div>
+          </div>
+          <!-- /#sidebar-wrapper -->
+
+          <!-- Sidebar wraper dashboard -->
+          <div class="col-lg-2 bg-white shadow-sm sidebar-2" id="sidebar-wrapper">
+            <div class="list-group">
+                <a href="#" class="fs-7 text-dark fw-bold pt-5 ms-1 mt-5 mb-3" style="color: #8A8A8A; text-decoration: none;">Cars</a>
+            </div>
+            <div class="list-group">
+              <a href="#" class="fs-7 text-dark fw-bold ps-2 pt-2 pb-2 mt-4" style="background-color: #CFD4ED; margin-left: -0.75rem;margin-right: -0.72rem; color: black; text-decoration: none;">List Car</a>
+            </div>
+          </div>
+          <!-- End Sidebar wraper dashboard -->
+
+          <!-- Page Content -->
+          <div class="col-lg-9 page-content-wrapper" id="page-content-wrapper" >
+            <nav class="navbar navbar-expand-lg bg-white shadow-sm py-2">
+                <div class="d-flex align-items-center">
+                    <img src="../images/Rectangle-62.png" class="ms-2" alt="logo">
+                    <i class="fas fa-align-justify primary-text fs-4" id="menu-toggle" style="margin-left: 9rem;"></i>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 ms-auto mb-lg-0">
+
+                      <form class="d-flex me-lg-3 me-3">
+                        <input class="form-control mb-1 mt-1" type="search" placeholder="Search" aria-label="Search" > 
+                        <button class="btn mb-1 mt-1 fw-bold" type="submit" >Search</button>
+                      </form>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-black fw-normal" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: larger;">
+                                <img src="../images/Rectangle-62.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                                John Doe
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                   
+                </div>
+            </nav>
+          
+            <div class="row">
+                <!-- Sidebar wraper dashboard -->
+                    <!-- <div class="col-lg-2 bg-white shadow-sm" id="sidebar-wrapper" style="width: 15rem; height:100%; padding-bottom: 100%;">
+                        <div class="list-group pt-3">
+                            <a href="#" class="fs-7 text-dark fw-bold ms-1 mb-2">Dashboard</a>
+                            <a href="#" class="fs-7 text-dark fw-bold ms-1 mb-2">Projects</a>
+                        </div>
+                      </div> -->
+                <!-- /#sidebar-wrapper -->
+
+                <!-- section content -->
+                <div class="col-lg-12 ">
+                    <div class="container-fluid px-4">
+                      <!-- breadcrumb -->
+                      <nav class="pt-4 for-breadcrumb" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#" class="text-black fw-bold" style="text-decoration: none;">Cars</a></li>
+                          <li class="breadcrumb-item active" aria-current="page"><%= title %></li>
+                        </ol>
+                      </nav>
+                      <!-- end breadcrumb -->
+
+                      <!-- Name of view -->
+                      <div class="name-of-view">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <h5 class="fw-bold">Update Car Informatios</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End name -->
+                        <div class="row g-3 my-2">
+                        <!--Conten Looping-->
+                          <div class="col-lg-12">
+                              <form action="/update/<%= cars._id %>" method="post" enctype="multipart/form-data">
+                                  <div class="card">
+                                      <div class="card-body">
+                                        <div class="row mb-3 bg-white">
+                                            <label for="name" class="col-sm-2 col-form-label">Name <span class="text-danger">*</span></label>
+                                            <div class="col-sm-6">
+                                              <input type="text" class="form-control" id="name" name="name" value="<%= cars.name %> " placeholder="Avanza" required>
+                                            </div>
+                                          </div>
+                                          <div class="row mb-3  bg-white">
+                                            <label for="price" class="col-sm-2 col-form-label">Sewa Per Hari <span class="text-danger">*</span></label>
+                                            <div class="col-sm-6">
+                                              <input type="text" class="form-control" id="price" name="price" value="<%= cars.price %>" placeholder="Rp 0,-" required>
+                                            </div>
+                                          </div>
+                                          <div class="row mb-3  bg-white">
+                                            <label for="size" class="col-sm-2 col-form-label">Ukuran Baru <span class="text-danger">*</span></label>
+                                            <div class="col-sm-6">
+                                                <select class="form-select form-select-md mb-3" name="size" id="size" aria-label=".form-select-lg example" required>
+                                                    <option selected>Small</option>
+                                                    <option value="Small">Small</option>
+                                                    <option value="Medium">Medium</option>
+                                                    <option value="Large">Large</option>
+                                                </select>
+                                            </div>
+                                          </div>
+                                          <div class="row mb-3  bg-white">
+                                            <label for="image" class="col-sm-2 col-form-label">Foto <span class="text-danger">*</span></label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" type="file" name="images" id="images">
+                                                <small>File size max. 2MB</small>
+                                                <img src="/<%= cars.images %> " alt="image-car-old">
+                                            </div>
+                                          </div>
+                                          
+                                      </div> 
+                                  </div>
+                                  <div class="button">
+                                    <button class="btn mb-1 mt-1 fw-bold bg-white mt-5" type="reset" style="color: #0D28A6; 
+                                    border-color: #0D28A6; 
+                                    border-radius: 2px; 
+                                    height: 2.5rem;;">Cancel</button>
+
+                                    <button class="btn mb-1 mt-1 fw-bold ms-3 mt-5" type="submit" style="
+                                    background-color:#0D28A6 ;
+                                    color: white;
+                                    border-radius: 2px; 
+                                    height: 2.5rem;">Update</button>
+                                    
+                                  </div>
+                              </form>
+                          </div>
+                        <!--End Conten Looping-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!-- /#page-content-wrapper -->
+
+      </div>
+    </div>
+  </section>
+
+  </body>
+</html>

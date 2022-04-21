@@ -1,0 +1,99 @@
+body{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+}
+
+.header .container-fluid .row{
+    background-color: #f9f9f9;
+}
+
+/* sidebar wraper 1 */
+.header .container-fluid .row .sidebar-1{
+    background-color: #0D28A6; 
+    width: 5rem; 
+    height: 100%; 
+    padding-bottom: 100%;
+}
+.header .container-fluid .row .sidebar-1 .list-group .list-group-item i{
+    width: 30px; 
+    height: 30px; 
+    margin: auto;
+}
+
+/* sidebar wrapper dashboard */
+
+.sidebar-2 {
+    width: 15rem; 
+    height:100%; 
+    padding-bottom: 100%;
+}
+
+
+/* page content */
+.page-content-wrapper{
+    background-color: #f9f9f9;
+}
+.page-content-wrapper .navbar{
+    margin-left: -15.77rem; 
+    margin-right: -1.85rem;
+}
+.page-content-wrapper .collapse .navbar-nav input{
+    color:#D0D0D0 ; 
+    border: 1px solid #D0D0D0;
+    border-radius: 2px; 
+    height: 2.5rem;
+}
+.page-content-wrapper .collapse .navbar-nav button{
+    color: #0D28A6; 
+    border-color: #0D28A6; 
+    border-radius: 2px; 
+    height: 2.5rem;;
+}
+
+/* section content */
+
+/* content looping */
+.col-lg-4 .card .card-body .image img{
+    width: 100%; height: auto;
+}
+
+.col-lg-4 .card .card-body .type-car p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+}
+.col-lg-4 .card .card-body .price{
+    margin-top: -1rem;
+}
+.col-lg-4 .card .card-body .price span{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+.col-lg-4 .card .card-body .created-at .row{
+    background-color: white;
+}
+.col-lg-4 .card .card-body .created-at .row .col-lg-9 p{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+                                      
+}
+.col-lg-4 .card .card-body .icon-buton .row{
+    background-color: white;                                   
+}
+.col-lg-4 .card .card-body .icon-buton .row .btn-delete span{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FA2C5A;                              
+}
+.col-lg-4 .card .card-body .icon-buton .row .btn-edited span{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;                             
+}

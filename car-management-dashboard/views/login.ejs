@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login Challenge 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="<%= base_url %>css/login.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5 mb-3">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="d-flex flex-row p-2" > 
+                        <img src="<%= base_url %>images/logo.png" style=" 
+                        width: 30%;" >
+                    </div>
+                    <div class="row p-2"> 
+                        <h3 class="fw-bold text-center">Login Administrator</h3>
+                    </div>
+                    <hr>
+                    <form action="<%= base_url %>" method="get">
+
+                        <div class="products p-2">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr class="add">
+                                        <td>Username</td>
+                                        <td><input type="text" class="form-control" id="username" name="username"></td>
+                                    </tr>
+                                    <tr class="add">
+                                        <td>Password</td>
+                                        <td><input type="password" class="form-control" id="password" name="password"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr>
+                        <div class="address p-2">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr class="add">
+                                        <td><button type="submit" class="btn btn-primary" onclick="myLogin()">Login</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                            
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function myLogin(){
+
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        axios.get('<%= base_url %>submit_login?username='+username).then(function (response) {
+            if(response.data.message == 'Success'){
+                window.location.href = "<%= base_url %>";
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: response.data.display_message,
+                })
+            }
+        });
+    }
+</script>
+</body>
+</html>
